@@ -1,19 +1,19 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/Non_Max_Suppresion.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/Non_Max_Suppresion.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Non_Max_Suppresion
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/arc_tan.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/arc_tan.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module arc_tan
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv" into library xil_defaultlib
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/gaussian_filter.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/definitions_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/gaussian_filter.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module gaussian_filter
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/gradient_calculation.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/gradient_calculation.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module gradient_calculation
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/line_buffer.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/line_buffer.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module line_buffer
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/pixel_loader.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/pixel_loader.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pixel_loader
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/sqrt_22b.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/sqrt_22b.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module sqrt_22b
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/JDMus/projects/team_edge_runner/testBench/non_max_suppression_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module nms_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/JDMus/projects/team_edge_runner/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

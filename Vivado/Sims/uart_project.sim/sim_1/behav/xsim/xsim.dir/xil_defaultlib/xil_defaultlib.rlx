@@ -1,9 +1,0 @@
-0.7
-2020.2
-Nov  8 2024
-22:36:55
-/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv,1742590845,systemVerilog,/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_Transmitter.sv;/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_transmitter_tb.sv;/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv,/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_Transmitter.sv,,definitions_pkg,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_Transmitter.sv,1742592487,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv,,Kennedy_Transmitter,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_transmitter_tb.sv,1742590815,systemVerilog,,,,tb_Kennedy_Transmitter,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv,1742587237,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_transmitter_tb.sv,,baud_gen,,uvm,,,,,,

@@ -1,16 +1,16 @@
-Vivado Simulator v2024.2.0
+Vivado Simulator v2023.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/deck/xlinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot nms_tb_behav xil_defaultlib.nms_tb xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: F:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot nms_tb_behav xil_defaultlib.nms_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv" Line 3. Module nms_tb has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv" Line 3. Module nms_tb has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/JDMus/projects/team_edge_runner/testBench/non_max_suppression_tb.sv" Line 3. Module nms_tb has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/JDMus/projects/team_edge_runner/testBench/non_max_suppression_tb.sv" Line 3. Module nms_tb has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/JDMus/projects/team_edge_runner/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/JDMus/projects/team_edge_runner/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package xil_defaultlib.definitions_pkg

@@ -1,4 +1,0 @@
-Running: xsim.dir/tb_Kennedy_Transmitter_behav/xsimk -simmode gui -wdb tb_Kennedy_Transmitter_behav.wdb -simrunnum 0 -socket 42469
-Design successfully loaded
-Design Loading Memory Usage: 177572 KB (Peak: 177628 KB)
-Design Loading CPU Usage: 1370 ms
