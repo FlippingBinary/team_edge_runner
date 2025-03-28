@@ -65,7 +65,7 @@ module uart_rx
       DATA: begin
         if (s_tick) begin
           if (s_reg == (OVERSAMPLE-1)) begin
-            dout_next = {dout_reg[6:0], rx};
+            dout_next = {rx, dout_reg[7:1]};
             s_next = 0;
             if (n_reg == 7) 
               state_next = STOP;
