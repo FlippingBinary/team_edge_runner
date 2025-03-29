@@ -36,7 +36,7 @@ module chip_top_tb;
     int byte_data;
     int i;
     begin
-      file = $fopen("/projects/howard/edge_runners_chip_backup/aayush/canny_edge/testImages/images_binary/t001.txt", "rb");
+      file = $fopen("/projects/howard/edge_runners_chip_backup/aayush/canny_edge/testImages/images_binary/lena_gray.txt", "rb");
       if (file == 0) begin
         $error("ERROR: Could not open input file.");
         $finish;
@@ -153,6 +153,10 @@ module chip_top_tb;
     read_image_file();
 
     // Apply reset for a short period
+    #100;
+    rstN = 1;
+    #100;
+    rstN = 0;
     #100;
     rstN = 1;
     #100;
