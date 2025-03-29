@@ -20,10 +20,10 @@ module gradient_calculation
   logic signed  [10:0]  mult_data_y_next  [8:0];
   logic signed  [10:0]  sum_data_x, sum_data_x_next;
   logic signed  [10:0]  sum_data_y, sum_data_y_next;
-  logic         [20:0]  square_data_x, square_data_y;
+  logic         [21:0]  square_data_x, square_data_y;
   logic                 square_data_valid;
   logic                 mult_data_valid, sum_data_valid;
-  logic         [20:0]  sqrt_ip;
+  logic         [21:0]  sqrt_ip;
   logic         [10:0]  sqrt_op;
   // need two stage pipeline delay in calculated gradient value to align it with gradient magnitude output
   logic         [1:0]   direction_stage1, direction_stage2; 
