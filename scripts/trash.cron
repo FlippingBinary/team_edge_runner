@@ -1,0 +1,1 @@
+*/5 * * * * mkdir -p ~/.trash && rm -rf ~/.trash/* > /dev/null 2>&1
