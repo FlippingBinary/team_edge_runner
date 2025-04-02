@@ -12,7 +12,7 @@ module nms_tb;
   logic         pl1_data_out_valid, pl2_data_out_valid, pl3_data_out_valid, pl4_data_out_valid;
   logic [7:0]   gaussian_pixel_out;
   logic         gaussian_pixel_out_valid;
-  logic [10:0]  gradient_magnitude;
+  logic [10:0]   gradient_magnitude;
   logic [1:0]   gradient_direction;
   logic         gradient_out_valid; 
   logic [7:0]   pixel_out;
@@ -82,14 +82,15 @@ module nms_tb;
     .pixel_data_out_valid(pl4_data_out_valid)
   );
 
-  Non_Max_Suppresion nms(
-    .Gradiant_Magnitude_Data(pl3_data_out),
-    .Direction_Data(pl4_data_out),
-    .Gradiant_Magnitude_in_valid(pl3_data_out_valid),
-    .Direction_Data_in_valid(pl4_data_out_valid),
-    .NMS_pixel(nms_magnitude),
-    .NMS_Direction_Data (nms_direction),
-    .NMS_Pixels_out_valid(nms_valid)
+  non_max_suppression nms(
+    .clk(clk),
+    .rstN(rstN),
+    .gradient_magnitude(pl3_data_out),
+    .gradient_direction(pl4_data_out),
+    .gradient_data_valid(pl3_data_out_valid),
+    .nms_magnitude(nms_magnitude),
+    .nms_direction(nms_direction),
+    .nms_valid(nms_valid)
   );
 
   byte image_mem[512*512]; // Array to store image data 
@@ -100,7 +101,7 @@ module nms_tb;
     int i;                  // Loop index
     
     // Open the file for reading
-    file = $fopen("testImages/images_binary/lena_gray.txt", "rb");
+    file = $fopen("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\images_binary\\lena_gray.txt", "rb");
     if (file == 0) begin
       $error("ERROR: Could not open the text file.");
       $finish;
@@ -162,20 +163,14 @@ module nms_tb;
 
   // Task to write pixel value to the .txt file
   task write_pixel_to_file;
-    input logic [10:0] pixel_value;  // Pixel value to write (maximum size)
-    input int size;                  // Size of the pixel value in bits
+    input logic [7:0] pixel_value;  // Pixel value to write
     input string path;
     begin
       // Open the file in append mode
       file2 = $fopen(path, "a");
       if (file2) begin
         // Write the pixel value to the file (in binary format, followed by newline)
-        case (size)
-          2: $fwrite(file2, "%02b\n", pixel_value[1:0]);
-          8: $fwrite(file2, "%08b\n", pixel_value[7:0]);
-          11: $fwrite(file2, "%011b\n", pixel_value[10:0]);
-          default: $display("Error: Unsupported size %0d", size);
-        endcase
+        $fwrite(file2, "%b\n", pixel_value);  // Write binary representation of the pixel
         $fclose(file2);  // Close the file after writing
       end else begin
         $display("Error: Unable to open file for writing.");
@@ -200,37 +195,40 @@ module nms_tb;
   endtask
 
   initial begin
-    clear_file("testImages/output_binary/gaussian_output.txt");
-    clear_file("testImages/output_binary/gradient_direction.txt");
-    clear_file("testImages/output_binary/gradient_magnitude.txt");
-    clear_file("testImages/output_binary/intermediate_edge.txt");
-    clear_file("testImages/output_binary/intermediate_x.txt");
-    clear_file("testImages/output_binary/intermediate_y.txt");
-    clear_file("testImages/output_binary/direction_contour.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gaussian_output.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gradient_magnitude.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gradient_direction.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_edge.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_x.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_y.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\nms.txt");
+    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\nms_dir.txt");
   end
+
   always @ (posedge clk) begin
     if (gaussian_pixel_out_valid) begin
-      write_pixel_to_file(gaussian_pixel_out, 8, "testImages/output_binary/gaussian_output.txt");
+      write_pixel_to_file(gaussian_pixel_out, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gaussian_output.txt");
     end
     if (gradient_out_valid) begin
-      write_pixel_to_file(gradient_magnitude, 11, "testImages/output_binary/gradient_magnitude.txt");
-      write_pixel_to_file(gradient_direction, 2, "testImages/output_binary/gradient_direction.txt");
+      write_pixel_to_file(gradient_magnitude, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gradient_magnitude.txt");
+      write_pixel_to_file(gradient_direction, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gradient_direction.txt");
       case (gradient_direction)
-        0: write_rgb_to_file(24'h0000FF, "testImages/output_binary/direction_contour.txt");
-        1: write_rgb_to_file(24'h00FF00, "testImages/output_binary/direction_contour.txt");
-        2: write_rgb_to_file(24'hFF0000, "testImages/output_binary/direction_contour.txt");
-        3: write_rgb_to_file(24'hFFFF00, "testImages/output_binary/direction_contour.txt");
+        0: write_rgb_to_file(24'h0000FF, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
+        1: write_rgb_to_file(24'h00FF00, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
+        2: write_rgb_to_file(24'hFF0000, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
+        3: write_rgb_to_file(24'hFFFF00, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
       endcase
-      write_pixel_to_file(pixel_out, 8, "testImages/output_binary/intermediate_edge.txt");
+      write_pixel_to_file(pixel_out, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_edge.txt");
     end
     if (pixel_xy_valid) begin
-      write_pixel_to_file(pixel_out_x, 8, "testImages/output_binary/intermediate_x.txt");
-      write_pixel_to_file(pixel_out_y, 8, "testImages/output_binary/intermediate_y.txt");
+      write_pixel_to_file(pixel_out_x, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_x.txt");
+      write_pixel_to_file(pixel_out_y, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_y.txt");
     end
     if (nms_valid) begin
-        write_pixel_to_file(nms_magnitude, 11, "testImages/output_binary/nms.txt");
-        write_pixel_to_file(nms_direction, 2, "testImages/output_binary/nms_dir.txt");
-      end
+      write_pixel_to_file(nms_magnitude, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\nms.txt");
+      write_pixel_to_file(nms_direction, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\nms_dir.txt");
+    end
   end
 
 endmodule: nms_tb
